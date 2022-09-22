@@ -20,9 +20,12 @@ module.exports = (app)=>{
     app.get("/api/airbnb/:hostId/stay", HostController.getAllStays)
     app.get("/api/stay/:hostId", StayController.staysForOneHost)
     app.post("/api/stay/:hostId", StayController.upload.single('image'), StayController.addStay)
+    app.get("/api/stay/one/:stayId", StayController.getStay)
+    app.post("/api/stay/:hostId", StayController.upload.single('image'), StayController.addStay)
+    app.put("/api/stay/edit/:stayId", StayController.updateStay)
     app.get("/api/stay", StayController.allStays)
-    // app.delete("/api/stay/:id", StayController.deleteStay)
-    app.delete("/api/stay/", StayController.deleteManyStay)
+    app.delete("/api/stay/:id", StayController.deleteStay)
+    // app.delete("/api/stay/", StayController.deleteManyStay)
 
     // all routes for user authenticate,
     app.get("/api/airbnb/user", authenticate, UserController.findAllUser)

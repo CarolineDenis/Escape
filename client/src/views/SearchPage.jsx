@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState }  from 'react'
+import SearchBannerContainer from '../components/SearchBannerContainer';
 import '../styles/searchPage.css'
 import SearchResult from '../components/SearchResult'
 import Header from '../components/Header';
@@ -7,6 +8,8 @@ import Footer from '../components/Footer';
 import axios from 'axios'
 import { GoogleMap, LoadScript, MarkerF, InfoWindow } from '@react-google-maps/api';
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
+import moment from 'moment';
+
 
 export default (props) => {
     const [stays, setStays] = useState([]);
@@ -16,8 +19,8 @@ export default (props) => {
     const [people, setPeople] = useState(1)
     const [nights, setNights] = useState(1)
     const [refresh, setRefresh] = useState(false)
-    const [startDate, setStartDate] = useState()
-    const [endDate, setEndDate] = useState()
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     const [defaultCenter, setDefaultCenter] = useState({
         lat: 39.8283, lng: -98.5795
@@ -83,7 +86,7 @@ export default (props) => {
     }
 
     const setStartDateInResults = (date) => {
-        console.log("random thing in SearchPage")
+        console.log("Console from SearchPage")
         setStartDate(date)
     }
     const setEndDateInResults = (date) => {
@@ -93,11 +96,17 @@ export default (props) => {
     return (
         <>
             <Header setStartDateInResults={setStartDateInResults} setEndDateInResults={setEndDateInResults}/>
+
             <div className="searchPage">
                 <div className='searchPage__info'>
-                    <p>{stays.length} stays - {startDate} to {endDate} - {people} guest(s) - {nights} Night(s)</p>
+                    <p>{stays.length} stays | {moment(startDate).format('DD MMMM')} to {moment(endDate).format('DD MMMM')} | {people} guest(s) | {nights} Night(s)</p>
                     <h1>Stays nearby</h1>
-                    {/* <Button variant="outlined">Cancellation Flexibility</Button> */}
+            </div>
+
+            <div className='header_center'>
+                    <SearchBannerContainer setStartDateInResults={setStartDateInResults} setEndDateInResults={setEndDateInResults}/>
+                    </div>
+                    <div className='filters'>
                     <Button variant="outlined">
                         <select className="selectStay" onChange={HandleChangeT}>
                             <option hidden>Type of Stay</option>

@@ -16,6 +16,11 @@ export default () => {
 
     const navigate = useNavigate()
 
+    const filteredList = (stayId) => {
+        const updatedList = stays.filter((stay)=>stay._id !== stayId)
+        setStays(updatedList)
+    }
+
     useEffect(() => {
         console.log("id", id)
         axios.get(`http://localhost:8000/api/stay/${id}`, { withCredentials: true })
@@ -24,15 +29,18 @@ export default () => {
                 setStays(response.data)
             })
             .catch(err => console.log(err))
-    }, [])
-
-    useEffect(() => {
         axios.get(`http://localhost:8000/api/airbnb/host/${id}`, { withCredentials: true })
             .then(response => setHost(response.data))
             .catch(err => console.log(err))
     }, [])
 
-    const handleDelete = () => { }
+    const handleDelete = (stayId) => {
+        axios.delete(`http://localhost:8000/api/stay/${stayId}`)
+            .then(response => {
+                filteredList(stayId)
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         <div className='Container'>
@@ -47,8 +55,11 @@ export default () => {
                             <div className='cardArea'>
                                 {stays.map((item, idx) =>
                                     <>
-                                        <Card key={idx} stay={item} />
-                                        {/* <Button varriant='outlined' onClick={handleDelete} id="delete">Delete</Button> */}
+                                        <Card key={idx} stay={item} className="card"/>
+                                        <div className='editButtons'>
+                                        <Button varriant='outlined' onClick= {() => {navigate(`/edit/${id}/${item._id}`)}} className="delete">Edit</Button>
+                                        <Button varriant='outlined' onClick={() =>{handleDelete(item._id)}} className="delete">Delete</Button>
+                                        </div>
                                     </>
                                 )}
                             </div>

@@ -35,6 +35,16 @@ module.exports.staysForOneHost = (req, res) => {
         .then(stays=>res.json(stays))
         .catch(err=>res.status(400).json(err))
 }
+//get one stay
+module.exports.getStay = (req, res) => {
+    Stay.findOne({_id:req.params.stayId})
+        .then(stay => {
+            console.log("back end", stay)
+            res.json(stay)
+        })
+        .catch(err => res.status(400).json(err));
+}
+
 // get all stay of a user
 module.exports.staysForOneUser = (req, res) => {
     Stay.find({user: req.params.userId})
@@ -93,5 +103,11 @@ module.exports.deleteStay = (req, res) => {
 module.exports.deleteManyStay = (req, res) => {
     Stay.deleteMany({ type: 'yourt' })
         .then(deleteStay => res.json(deleteStay))
+        .catch(err => res.status(400).json(err))
+}
+
+module.exports.updateStay = (req, res) => {
+    Stay.findOneAndUpdate({_id: req.params.stayId}, req.body, {new:true, runValidators:true})
+        .then(updatedStay => res.json(updatedStay))
         .catch(err => res.status(400).json(err))
 }

@@ -26,12 +26,16 @@
 
 .registration{
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .registration button{
     color: #972e79;
     letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-right: 10px;
 }
 .registration button:hover{
     color: white;

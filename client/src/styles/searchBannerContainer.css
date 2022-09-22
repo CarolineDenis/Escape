@@ -60,7 +60,6 @@
 .search__form-start-date{
     border: none;
     padding-left: 20px;
-    border-left: 1px solid #972e79;
 }
 .search__form-start-date  input:focus{
     outline-width: 0;
@@ -85,6 +84,6 @@
     border-left: 1px solid #972e79;
 }
 
-#endDate selected{
+#endDate {
     color: white;
 }
