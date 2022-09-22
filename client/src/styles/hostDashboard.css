@@ -1,0 +1,26 @@
+.Container h1{
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#create{
+    background-color: #972e79;
+    color: white;
+    text-transform: inherit;
+    margin-top: 20px;
+    font-weight: 600;
+    width: 60%;
+    height: 45px;
+    border-radius: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#create:hover{
+    background-color: white;
+    color: #972e79;
+}
