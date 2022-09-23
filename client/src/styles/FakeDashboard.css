@@ -1,6 +1,7 @@
+
 .typeWriter_container{
   color: white;
-  width: 660px;
+  width: 470px;
   font-size: 25px;
   height: 200px;
   background-color: rgba(2, 0, 36, 0.767);
@@ -14,11 +15,13 @@
 }
 
 .airbnbDashboard{
-  width: 100%;
+  width: 2000px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -500px;
   z-index: 1001;
+  height: 100%;
+  background-size: cover;
 }
 
 .play{

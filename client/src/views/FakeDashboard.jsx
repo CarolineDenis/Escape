@@ -19,7 +19,7 @@ export default () => {
 
     return (
         <div className='Container'>
-        <img className='airbnbDashboard' src='/img/airbnb_dash2.png' alt='airbnbDashboard'/>
+        <img className='airbnbDashboard' src='/img/airbnb_dash3.png' alt='airbnbDashboard'/>
         <div className='background'>
         <div className='typeWriter_container'>
         <Typewriter
