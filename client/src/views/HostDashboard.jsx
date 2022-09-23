@@ -58,7 +58,7 @@ export default () => {
                                         <Card key={idx} stay={item} className="card"/>
                                         <div className='editButtons'>
                                         <Button varriant='outlined' onClick= {() => {navigate(`/edit/${id}/${item._id}`)}} className="delete">Edit</Button>
-                                        <Button varriant='outlined' onClick={() =>{handleDelete(item._id)}} className="delete">Delete</Button>
+                                        <Button varriant='outlined' onClick={() =>{handleDelete(item._id)}} id="delete">Delete</Button>
                                         </div>
                                     </>
                                 )}

@@ -23,7 +23,7 @@ let users = [];
 
 // Establishes connection to React app
 io.on('connection', (socket) => {
-    // console.log(`${socket.id} user just connected!`);
+    console.log(`${socket.id} user just connected!`);
     // creates a unique Id for each socket
 
     // * Listens when a new user joins the server

@@ -29,7 +29,7 @@ export default () => {
             typeSpeed={100}
             deleteSpeed={50}
             delaySpeed={1000}
-            words={['Tired of staying in the most commun places? Dreaming of a cave in the far far India or a private Island in the Pacific? Will you be bold enough to switch to the hidden size?']}
+            words={['Tired of staying in the most common places? Dreaming of a cave in the depths of India or a private Island in the Pacific? Will you be bold enough to switch to the hidden size?']}
         />
         <Button variant="outlined" onClick ={ () => navigate('/home')}>Jump In The Hidden Side</Button>
         </div>

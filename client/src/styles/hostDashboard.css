@@ -49,3 +49,12 @@
     background-color: white;
     color: #972e79;
 }
+
+#delete{
+    color: #cf68b2 ;
+    background-color: rgba(2,0,36,1);
+}
+#delete:hover{
+    color: rgba(2,0,36,1) ;
+    background-color: #cf68b2;
+}

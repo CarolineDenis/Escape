@@ -25,14 +25,14 @@ export default (props) => {
                     <div className="search__form-start-date search__form-element">
                         <p>Start Date</p>
 
-                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} dateFormat='yyyy-MM-dd' id="endDate"/>
+                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} dateFormat='dd-MM-yy' id="endDate"/>
                     </div>
 
                     <div className="search__form-end-date search__form-element">
                         <p>End Date</p>
                         <DatePicker selected={endDate} onChange={(date) => {
                             setEndDate(date)
-                        }} id="endDate"/>
+                        }} dateFormat='dd-MM-yy' id="endDate"/>
                     </div>
 
                     <Button type="submit"><SearchIcon sx={{ color: "#972e79"}} className="searchIcon"/></Button>
