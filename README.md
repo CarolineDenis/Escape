@@ -1,5 +1,6 @@
 <h1 align="center"> ESCAPE </h1>
-<p>Underground Darkmode Airbnb Using REACT<p>
+<p align="center">Underground Darkmode Airbnb Using REACT<p>
+<p align="center">Escape allows hosts to create an account using BCrypt, JSON Web Token, and cookie-parser for authentication. Once an account has been created, the host will be able to utilize all full-CRUD capabilities, by allowing the host to create, edit, and delete a Stay location. By using Google Maps API and geocoding, when a new stay in created, the location will be added to the database, as well as a map on the page. Additionally, each Stay must provide an image of their location when creating an account, utilizing multer. Finally, a chat room was added to allow host and users to communicate with each other, by implementing socket.IO.</p>
 <h2 align="center">Technologies Used:</h2>
 <p align="center"> REACT | JAVASCRIPT | MONGODB | MONGOOSE | APIs | CSS | HTML | SOCKET IO | EXPRESS | NODE JS</p>
 <p align="center">
